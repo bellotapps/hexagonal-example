@@ -11,12 +11,14 @@
 
     <groupId>com.bellotapps.examples</groupId>
     <artifactId>hexagonal-example</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
     <name>${project.groupId}:${project.artifactId}</name>
+    <packaging>pom</packaging>
 
     <modules>
         <module>hexagonal-example-application</module>
+        <module>hexagonal-example-core</module>
+        <module>hexagonal-example-adapters</module>
     </modules>
 
     <properties>
@@ -76,6 +78,4 @@
         <developerConnection>scm:git:ssh://github.com:bellotapps/hexagonal-example.git</developerConnection>
         <url>http://github.com/bellotapps/hexagonal-example/tree/master</url>
     </scm>
-
-
 </project>

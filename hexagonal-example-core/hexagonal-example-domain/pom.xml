@@ -6,63 +6,42 @@
 
     <parent>
         <groupId>com.bellotapps.examples</groupId>
-        <artifactId>hexagonal-example</artifactId>
+        <artifactId>hexagonal-example-core</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>hexagonal-example-application</artifactId>
+    <artifactId>hexagonal-example-domain</artifactId>
     <name>${project.groupId}:${project.artifactId}</name>
     <packaging>jar</packaging>
 
     <properties>
-        <!-- Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <!-- Bootstrap class -->
-        <bootstrapClass>com.bellotapps.examples.hexagonal.application.Application</bootstrapClass>
     </properties>
 
     <dependencies>
-        <!-- Core -->
+        <!-- Models -->
         <dependency>
             <groupId>com.bellotapps.examples</groupId>
-            <artifactId>hexagonal-example-domain</artifactId>
+            <artifactId>hexagonal-example-models</artifactId>
             <version>${project.parent.version}</version>
-            <scope>runtime</scope>
         </dependency>
 
-        <!-- Adapters -->
+        <!-- Ports -->
         <dependency>
             <groupId>com.bellotapps.examples</groupId>
-            <artifactId>hexagonal-example-spring-data-adapter</artifactId>
+            <artifactId>hexagonal-example-repositories</artifactId>
             <version>${project.parent.version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>com.bellotapps.examples</groupId>
-            <artifactId>hexagonal-example-rest-adapter</artifactId>
+            <artifactId>hexagonal-example-services</artifactId>
             <version>${project.parent.version}</version>
-            <scope>runtime</scope>
         </dependency>
 
-        <!-- Third party libraries -->
+        <!-- Third party libraries-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>${bootstrapClass}</mainClass>
-                    <layout>JAR</layout>
-                    <executable>true</executable>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
